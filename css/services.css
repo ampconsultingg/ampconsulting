@@ -1,0 +1,131 @@
+/* services.css — updated to match index theme */
+
+/* ============================
+   CSS variables (same as index)
+   ============================ */
+:root{
+  --brand-red: #8A1E1E;
+  --brand-red-dark: #701919;
+  --muted-gray: #7A7F85;
+  --bg: #FFFFFF;
+  --surface: #F5F5F5;
+  --surface-2: #FAFAFA;
+  --border: #E5E5E5;
+  --text: #111111;
+  --subtext: #555555;
+  --muted: #777777;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+  --radius: 12px;
+}
+
+/* ============================
+   Base
+   ============================ */
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================
+   Navbar (matching index)
+   ============================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--brand-red);
+}
+
+/* ============================
+   Header Section
+   ============================ */
+.services-header {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.services-header h1 {
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  color: var(--subtext);
+  font-size: 18px;
+}
+
+/* ============================
+   Services Grid
+   ============================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.service-card {
+  background: var(--surface);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: 0.25s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+.service-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.service-card p {
+  color: var(--subtext);
+}
+
+/* ============================
+   Footer (matching index)
+   ============================ */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  color: var(--muted);
+  font-size: 14px;
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMP Consulting, LLC — Managed IT & Apple Support</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Meta -->
+  <meta name="description" content="AMP Consulting provides managed IT services and Apple-focused support for individuals and small businesses." />
+</head>
+<body>
+  <!-- Page wrapper -->
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" aria-label="AMP Consulting Home">
+            <img src="images/amplogo.png" alt="AMP Consulting logo" class="logo">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <button id="openSupportBtn" class="btn btn-primary" aria-haspopup="dialog">Get Support</button>
+            <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-controls="mobileNav">
+              <span class="sr-only">Open menu</span>
+              <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="2"></rect><rect y="6" width="20" height="2"></rect><rect y="12" width="20" height="2"></rect></svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- mobile nav -->
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <a href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="careers.html">Careers</a>
+        <button id="openSupportBtnMobile" class="btn btn-primary">Get Support</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero container" id="home-hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h1 id="hero-title">Reliable IT Support. Seamless Apple Experience.</h1>
+          <p class="lead">
+            AMP Consulting, LLC provides managed IT services and Apple technology consulting for individuals and small businesses. Improve workflow, secure systems, and enjoy a fully supported Apple experience.
+          </p>
+          <div class="hero-ctas">
+            <button id="heroSupportBtn" class="btn btn-primary">Get Support</button>
+            <a class="btn btn-outline" href="#services">Our Services</a>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="false">
+          <!-- Minimal Apple-device illustration (inline SVG) -->
+          <svg class="device-illustration" viewBox="0 0 600 400" role="img" aria-label="Illustration of Apple devices">
+            <!-- laptop -->
+            <rect x="60" y="60" width="320" height="200" rx="10" fill="none" stroke="var(--muted-gray)" stroke-width="2"/>
+            <rect x="110" y="230" width="220" height="10" rx="3" fill="var(--card-bg)"/>
+            <!-- phone -->
+            <rect x="400" y="80" width="80" height="150" rx="14" fill="none" stroke="var(--muted-gray)" stroke-width="2"/>
+            <circle cx="440" cy="220" r="4" fill="var(--muted-gray)"/>
+            <!-- tablet -->
+            <rect x="350" y="250" width="180" height="100" rx="12" fill="none" stroke="var(--muted-gray)" stroke-width="2"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ABOUT PREVIEW -->
+      <section id="about" class="section container about-preview">
+        <div class="about-left">
+          <h2>About AMP Consulting, LLC</h2>
+          <p>
+            AMP Consulting, LLC provides managed IT services and technology consulting, supporting individuals and small businesses with reliable, efficient IT solutions designed to improve workflow and system performance.
+            We provide comprehensive support for all Apple needs, helping clients optimize their systems and enjoy a seamless, efficient user experience.
+          </p>
+          <a href="about.html" class="link-more">Read more about us →</a>
+        </div>
+        <div class="about-right">
+          <!-- small feature grid or icons could go here -->
+        </div>
+      </section>
+
+      <!-- SERVICES PREVIEW -->
+      <section id="services" class="section container services-preview">
+        <h2>Our Core Services</h2>
+        <p class="section-intro">Apple-focused IT support tailored to individuals and small businesses.</p>
+
+        <div class="service-cards">
+          <article class="card service-card">
+            <div class="card-accent"></div>
+            <h3>Personal Apple Support</h3>
+            <p>Device troubleshooting, system optimization, data backup, and app support for personal users.</p>
+            <a href="services.html" class="link-more">Learn more →</a>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-accent"></div>
+            <h3>Small Business IT</h3>
+            <p>Device management, network setup, email migration, security hardening, and workflow consulting.</p>
+            <a href="services.html" class="link-more">Learn more →</a>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-accent"></div>
+            <h3>Managed Services</h3>
+            <p>Ongoing monitoring, scheduled maintenance, remote assistance, and proactive performance tuning.</p>
+            <a href="services.html" class="link-more">Learn more →</a>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <button class="btn btn-primary" id="servicesSupportBtn">Request Support</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p class="footer-contact">
+            <strong>CONTACT US:</strong>
+            <a href="mailto:info@ampconsulting.com">info@ampconsulting.com</a> • <a href="tel:+15555555555">(555) 555-5555</a>
+          </p>
+        </div>
+        <div class="footer-right">
+          <p>© AMP Consulting, LLC</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SUPPORT MODAL (Branded header) -->
+  <div id="supportModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="supportModalTitle">
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <img src="images/amplogo.png" alt="AMP Consulting logo" class="modal-logo">
+        <h3 id="supportModalTitle">Request Support</h3>
+        <button id="closeModalBtn" class="modal-close" aria-label="Close support form">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Client type -->
+        <div class="field client-type">
+          <label>Who is requesting support?</label>
+          <div class="radio-row" role="radiogroup" aria-label="Client type">
+            <label class="radio">
+              <input type="radio" name="clientType" value="personal" checked> Personal
+            </label>
+            <label class="radio">
+              <input type="radio" name="clientType" value="business"> Business
+            </label>
+          </div>
+        </div>
+
+        <form id="supportForm" class="form" method="post" enctype="multipart/form-data" novalidate>
+          <!-- Personal fields (always available) -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessName">Business name</label>
+              <input id="businessName" name="businessName" type="text">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessSize">Business size</label>
+              <select id="businessSize" name="businessSize">
+                <option value="">Select</option>
+                <option>1–5</option>
+                <option>6–20</option>
+                <option>20+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="serviceType">Type of service needed</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select</option>
+                <option>Managed IT support</option>
+                <option>Apple support</option>
+                <option>Workflow optimization</option>
+                <option>Device setup / migration</option>
+                <option>Consultation</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="deviceType">Device type (optional)</label>
+              <select id="deviceType" name="deviceType">
+                <option value="">Select</option>
+                <option>Mac</option>
+                <option>iPhone</option>
+                <option>iPad</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="description">Describe the issue / request</label>
+              <textarea id="description" name="description" rows="4" placeholder="Give us as much detail as you can..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="attachment">Attach file (screenshot, device list) — optional</label>
+              <input id="attachment" name="attachment" type="file" accept=".png,.jpg,.jpeg,.pdf,.xlsx,.csv">
+            </div>
+
+            <div class="field">
+              <label for="contactMethod">Preferred contact</label>
+              <select id="contactMethod" name="contactMethod">
+                <option>Email</option>
+                <option>Phone</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- hidden inputs for backend routing (replace values on server-side or in JS) -->
+          <input type="hidden" name="formType" value="support-request">
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <button type="button" class="btn btn-ghost" id="cancelSupportBtn">Cancel</button>
+          </div>
+
+          <div id="supportFormMsg" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/index.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — AMP Consulting, LLC</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Global + page styles -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/about.css">
+
+  <meta name="description" content="Learn about AMP Consulting, LLC — our mission, values, and modern Apple-focused IT solutions." />
+</head>
+
+<body>
+  <div class="site">
+
+    <!-- HEADER (same markup as index.html) -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" aria-label="AMP Consulting Home">
+            <img src="images/amplogo.png" alt="AMP Consulting logo" class="logo">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+             <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="career.html">Careers</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <button id="openSupportBtn" class="btn btn-primary" aria-haspopup="dialog">Get Support</button>
+            <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-controls="mobileNav">
+              <span class="sr-only">Open menu</span>
+              <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="2"></rect><rect y="6" width="20" height="2"></rect><rect y="12" width="20" height="2"></rect></svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+ <!-- mobile nav -->
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="career.html">Careers</a>
+        <button id="openSupportBtnMobile" class="btn btn-primary">Get Support</button>
+      </div>
+    </header>
+
+    <!-- HERO — Neo-Tech centered with dot-grid (visual) -->
+    <section class="about-hero">
+      <div class="about-hero-inner container">
+        <h1 class="about-hero-title">Designing seamless Apple-first IT for modern teams & individuals</h1>
+        <p class="about-hero-sub">
+          We combine deep Apple expertise, proactive IT management, and practical consulting to help individuals and small businesses
+          reduce friction, increase uptime, and streamline workflows. Our approach is modern, secure, and tailored — built to scale with you.
+        </p>
+
+        <div class="about-hero-ctas">
+          <button id="heroSupportBtn" class="btn btn-primary">Get Support</button>
+          <a href="index.html#services" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="container about-main">
+
+      <!-- Glass cards (staggered animation) -->
+      <section class="glass-row" data-animate="stagger">
+        <article class="glass-card" data-animate="item">
+          <h3>Our Mission</h3>
+          <p>To simplify technology by delivering dependable Apple-centric IT and consulting — so our clients can focus on their work, creativity, and growth.</p>
+        </article>
+
+        <article class="glass-card" data-animate="item">
+          <h3>What We Do</h3>
+          <p>From provisioning and migration to managed services and workflow optimization—solutions that reduce downtime and improve performance.</p>
+        </article>
+
+        <article class="glass-card" data-animate="item">
+          <h3>How We Work</h3>
+          <p>We start with listening, propose practical steps, and follow with measurable outcomes and transparent communication.</p>
+        </article>
+      </section>
+
+      <!-- Split section: left features, right founder note -->
+      <section class="split-section" data-animate="section">
+        <div class="split-left">
+          <h2>Why AMP Consulting</h2>
+          <ul class="feature-list">
+            <li>Apple-first expertise — macOS, iOS, iPadOS, iCloud</li>
+            <li>Proactive monitoring and managed services</li>
+            <li>Secure, privacy-first approach</li>
+            <li>Clear communication and fast response</li>
+            <li>Flexible plans for individuals and small teams</li>
+          </ul>
+        </div>
+
+        <div class="split-right">
+          <h2>Founder’s Note</h2>
+          <p class="quote">“We built AMP Consulting to remove friction from technology. Our goal is to make Apple devices and services feel effortless for our clients.”</p>
+          <p class="byline">— Founder, AMP Consulting, LLC</p>
+        </div>
+      </section>
+
+      <!-- Process steps (slide-in) -->
+      <section class="values-section" data-animate="section">
+        <h3>Our Process</h3>
+        <ol class="process-steps">
+          <li class="process-step"> <strong>Assess</strong> — Understand environment & goals</li>
+          <li class="process-step"> <strong>Plan</strong> — Tailored recommendations</li>
+          <li class="process-step"> <strong>Implement</strong> — Smooth migration & setup</li>
+          <li class="process-step"> <strong>Support</strong> — Ongoing maintenance & improvement</li>
+        </ol>
+      </section>
+
+    </main>
+
+    <!-- FOOTER (same as index.html) -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p class="footer-contact">
+            <strong>CONTACT US:</strong>
+            <a href="mailto:info@ampconsulting.com">info@ampconsulting.com</a> • <a href="tel:+15555555555">(555) 555-5555</a>
+          </p>
+        </div>
+        <div class="footer-right">
+          <p>© AMP Consulting, LLC</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- SUPPORT MODAL (copied so modal works on this page) -->
+  <div id="supportModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="supportModalTitle">
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <img src="images/amplogo.png" alt="AMP Consulting logo" class="modal-logo">
+        <h3 id="supportModalTitle">Request Support</h3>
+        <button id="closeModalBtn" class="modal-close" aria-label="Close support form">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="field client-type">
+          <label>Who is requesting support?</label>
+          <div class="radio-row" role="radiogroup" aria-label="Client type">
+            <label class="radio">
+              <input type="radio" name="clientType" value="personal" checked> Personal
+            </label>
+            <label class="radio">
+              <input type="radio" name="clientType" value="business"> Business
+            </label>
+          </div>
+        </div>
+
+        <form id="supportForm" class="form" method="post" enctype="multipart/form-data" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessName">Business name</label>
+              <input id="businessName" name="businessName" type="text">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessSize">Business size</label>
+              <select id="businessSize" name="businessSize">
+                <option value="">Select</option>
+                <option>1–5</option>
+                <option>6–20</option>
+                <option>20+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="serviceType">Type of service needed</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select</option>
+                <option>Managed IT support</option>
+                <option>Apple support</option>
+                <option>Workflow optimization</option>
+                <option>Device setup / migration</option>
+                <option>Consultation</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="deviceType">Device type (optional)</label>
+              <select id="deviceType" name="deviceType">
+                <option value="">Select</option>
+                <option>Mac</option>
+                <option>iPhone</option>
+                <option>iPad</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="description">Describe the issue / request</label>
+              <textarea id="description" name="description" rows="4" placeholder="Give us as much detail as you can..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="attachment">Attach file (screenshot, device list) — optional</label>
+              <input id="attachment" name="attachment" type="file" accept=".png,.jpg,.jpeg,.pdf,.xlsx,.csv">
+            </div>
+
+            <div class="field">
+              <label for="contactMethod">Preferred contact</label>
+              <select id="contactMethod" name="contactMethod">
+                <option>Email</option>
+                <option>Phone</option>
+              </select>
+            </div>
+          </div>
+
+          <input type="hidden" name="formType" value="support-request">
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <button type="button" class="btn btn-ghost" id="cancelSupportBtn">Cancel</button>
+          </div>
+
+          <div id="supportFormMsg" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global + page scripts -->
+  <script src="js/index.js" defer></script>
+  <script src="js/about.js" defer></script>
+</body>
+</html>

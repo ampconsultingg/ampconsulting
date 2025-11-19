@@ -1,0 +1,188 @@
+<!-- services.html (Fully Corrected) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AMP Consulting — Services</title>
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/services.css" />
+</head>
+<body>
+<!-- NAVBAR (EXACT COPY FROM index.html) -->
+  <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" aria-label="AMP Consulting Home">
+            <img src="images/amplogo.png" alt="AMP Consulting logo" class="logo">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="career.html">Careers</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <button id="openSupportBtn" class="btn btn-primary" aria-haspopup="dialog">Get Support</button>
+            <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-controls="mobileNav">
+              <span class="sr-only">Open menu</span>
+              <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="2"></rect><rect y="6" width="20" height="2"></rect><rect y="12" width="20" height="2"></rect></svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- mobile nav -->
+      <div id="mobileNav" class="mobile-nav" hidden>
+        <a href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="career.html">Careers</a>
+        <button id="openSupportBtnMobile" class="btn btn-primary">Get Support</button>
+      </div>
+    </header>
+
+
+<!-- SERVICES HERO -->
+<header class="services-header"> <h1>Our Services</h1> <p>Advanced, modern, tech-driven solutions for businesses of the future.</p> </header>
+
+<!-- SERVICES GRID -->
+<section class="services-grid">
+<div class="service-card">
+<h3>IT Support</h3>
+<p>Remote and onsite troubleshooting for all devices.</p>
+</div>
+<div class="service-card">
+<h3>Cybersecurity</h3>
+<p>Threat protection, monitoring, and risk analysis.</p>
+</div>
+<div class="service-card">
+<h3>Cloud Setup</h3>
+<p>Microsoft 365, Azure, Google Workspace, AWS and more.</p>
+</div>
+<div class="service-card">
+<h3>Business Infrastructure</h3>
+<p>Network installs, automation workflows, hardware provisioning.</p>
+</div>
+</section>
+
+ <!-- SUPPORT MODAL (Branded header) -->
+  <div id="supportModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="supportModalTitle">
+    <div class="modal-panel" role="document">
+      <div class="modal-header">
+        <img src="images/amplogo.png" alt="AMP Consulting logo" class="modal-logo">
+        <h3 id="supportModalTitle">Request Support</h3>
+        <button id="closeModalBtn" class="modal-close" aria-label="Close support form">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Client type -->
+        <div class="field client-type">
+          <label>Who is requesting support?</label>
+          <div class="radio-row" role="radiogroup" aria-label="Client type">
+            <label class="radio">
+              <input type="radio" name="clientType" value="personal" checked> Personal
+            </label>
+            <label class="radio">
+              <input type="radio" name="clientType" value="business"> Business
+            </label>
+          </div>
+        </div>
+
+        <form id="supportForm" class="form" method="post" enctype="multipart/form-data" novalidate>
+          <!-- Personal fields (always available) -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessName">Business name</label>
+              <input id="businessName" name="businessName" type="text">
+            </div>
+
+            <div class="field business-only" hidden>
+              <label for="businessSize">Business size</label>
+              <select id="businessSize" name="businessSize">
+                <option value="">Select</option>
+                <option>1–5</option>
+                <option>6–20</option>
+                <option>20+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="serviceType">Type of service needed</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select</option>
+                <option>Managed IT support</option>
+                <option>Apple support</option>
+                <option>Workflow optimization</option>
+                <option>Device setup / migration</option>
+                <option>Consultation</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="deviceType">Device type (optional)</label>
+              <select id="deviceType" name="deviceType">
+                <option value="">Select</option>
+                <option>Mac</option>
+                <option>iPhone</option>
+                <option>iPad</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="description">Describe the issue / request</label>
+              <textarea id="description" name="description" rows="4" placeholder="Give us as much detail as you can..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="attachment">Attach file (screenshot, device list) — optional</label>
+              <input id="attachment" name="attachment" type="file" accept=".png,.jpg,.jpeg,.pdf,.xlsx,.csv">
+            </div>
+
+            <div class="field">
+              <label for="contactMethod">Preferred contact</label>
+              <select id="contactMethod" name="contactMethod">
+                <option>Email</option>
+                <option>Phone</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- hidden inputs for backend routing (replace values on server-side or in JS) -->
+          <input type="hidden" name="formType" value="support-request">
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <button type="button" class="btn btn-ghost" id="cancelSupportBtn">Cancel</button>
+          </div>
+
+          <div id="supportFormMsg" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global + page scripts -->
+  <script src="js/index.js" defer></script>
+  <script src="js/about.js" defer></script>
+</body>
+</html>

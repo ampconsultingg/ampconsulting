@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Careers — AMP Consulting, LLC</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- PAGE-SPECIFIC -->
+  <link rel="stylesheet" href="css/career.css">
+
+  <meta name="description" content="Explore career opportunities at AMP Consulting, LLC and join our Apple-focused IT support team." />
+</head>
+
+<body>
+<div class="site">
+
+  <!-- HEADER (IDENTICAL TO INDEX) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" aria-label="AMP Consulting Home">
+          <img src="images/amplogo.png" alt="AMP Consulting logo" class="logo">
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="career.html" class="active">Careers</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <button id="openSupportBtn" class="btn btn-primary" aria-haspopup="dialog">Get Support</button>
+          <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-controls="mobileNav">
+            <span class="sr-only">Open menu</span>
+            <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
+              <rect width="20" height="2"></rect>
+              <rect y="6" width="20" height="2"></rect>
+              <rect y="12" width="20" height="2"></rect>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="career.html">Careers</a>
+      <button id="openSupportBtnMobile" class="btn btn-primary">Get Support</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <section class="career-hero container">
+      <h1>Join the AMP Consulting Team</h1>
+      <p class="lead">
+        We're building a team of skilled technicians and IT specialists who love Apple technology
+        and enjoy helping clients solve challenges with clarity and care.
+      </p>
+    </section>
+
+    <!-- OPEN POSITIONS (dynamic) -->
+    <section class="section container career-section">
+      <h2>Open Positions</h2>
+      <p class="section-intro">Current job openings at AMP Consulting, LLC</p>
+
+      <!-- JS will insert job cards here -->
+      <div id="jobsContainer" class="career-cards"></div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section container career-section">
+      <h2>Benefits</h2>
+      <p class="section-intro">Supporting our team with meaningful benefits</p>
+
+      <ul class="benefits-list">
+        <li>Competitive pay based on experience</li>
+        <li>Flexible scheduling and hybrid work opportunities</li>
+        <li>Paid training for Apple certifications</li>
+        <li>Professional development budget</li>
+        <li>Paid sick time and PTO</li>
+        <li>Supportive small-team work environment</li>
+      </ul>
+    </section>
+
+    <!-- HIRING PROCESS -->
+    <section class="section container career-section">
+      <h2>Hiring Process</h2>
+      <p class="section-intro">A simple, transparent application experience</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>Submit Application</h3>
+          <p>Send your contact details, experience, and resume through our online form.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Initial Review</h3>
+          <p>Our team reviews your qualifications and matches them to the right role.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Interview</h3>
+          <p>A short virtual or in-person meeting to learn more about your experience.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <h3>Final Decision</h3>
+          <p>If selected, you’ll receive an offer and onboarding details shortly after.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (IDENTICAL TO INDEX) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-contact">
+          <strong>CONTACT US:</strong>
+          <a href="mailto:info@ampconsulting.com">info@ampconsulting.com</a> •
+          <a href="tel:+15555555555">(555) 555-5555</a>
+        </p>
+      </div>
+      <div class="footer-right">
+        <p>© AMP Consulting, LLC</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- SUPPORT MODAL (EXACT COPY FROM INDEX) -->
+<div id="supportModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="supportModalTitle">
+  <div class="modal-panel" role="document">
+
+    <div class="modal-header">
+      <img src="images/amplogo.png" alt="AMP Consulting logo" class="modal-logo">
+      <h3 id="supportModalTitle">Request Support</h3>
+      <button id="closeModalBtn" class="modal-close" aria-label="Close support form">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Client type -->
+      <div class="field client-type">
+        <label>Who is requesting support?</label>
+        <div class="radio-row" role="radiogroup" aria-label="Client type">
+          <label class="radio">
+            <input type="radio" name="clientType" value="personal" checked> Personal
+          </label>
+          <label class="radio">
+            <input type="radio" name="clientType" value="business"> Business
+          </label>
+        </div>
+      </div>
+
+      <!-- Support Form -->
+      <form id="supportForm" class="form" method="post" enctype="multipart/form-data" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel">
+          </div>
+
+          <div class="field business-only" hidden>
+            <label for="businessName">Business name</label>
+            <input id="businessName" name="businessName" type="text">
+          </div>
+
+          <div class="field business-only" hidden>
+            <label for="businessSize">Business size</label>
+            <select id="businessSize" name="businessSize">
+              <option value="">Select</option>
+              <option>1–5</option>
+              <option>6–20</option>
+              <option>20+</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="serviceType">Type of service needed</label>
+            <select id="serviceType" name="serviceType" required>
+              <option value="">Select</option>
+              <option>Managed IT support</option>
+              <option>Apple support</option>
+              <option>Workflow optimization</option>
+              <option>Device setup / migration</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="deviceType">Device type (optional)</label>
+            <select id="deviceType" name="deviceType">
+              <option value="">Select</option>
+              <option>Mac</option>
+              <option>iPhone</option>
+              <option>iPad</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="description">Describe the issue / request</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="attachment">Attach file (optional)</label>
+            <input id="attachment" name="attachment" type="file">
+          </div>
+
+          <div class="field">
+            <label for="contactMethod">Preferred contact</label>
+            <select id="contactMethod" name="contactMethod">
+              <option>Email</option>
+              <option>Phone</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="hidden" name="formType" value="support-request">
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <button type="button" class="btn btn-ghost" id="cancelSupportBtn">Cancel</button>
+        </div>
+
+        <div id="supportFormMsg" class="form-message"></div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- APPLY MODAL (NEW) -->
+ <!-- APPLY MODAL (FIXED + MATCHES CSS) -->
+<div id="applyModal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+
+  <div class="apply-modal-panel" role="document">
+
+    <!-- Modal header -->
+    <div class="apply-modal-header">
+      <img src="images/amplogo.png" alt="AMP Consulting logo">
+      <h3 id="applyJobTitle">Apply for Position</h3>
+      <button id="closeApplyModal" class="apply-modal-close">&times;</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="apply-modal-body">
+
+      <form id="applyForm" class="form" method="post" enctype="multipart/form-data">
+        
+        <div class="apply-form-grid">
+
+          <div class="field">
+            <label for="applicantName">Full Name</label>
+            <input id="applicantName" name="applicantName" type="text" required>
+          </div>
+
+          <div class="field">
+            <label for="applicantEmail">Email</label>
+            <input id="applicantEmail" name="applicantEmail" type="email" required>
+          </div>
+
+          <div class="field">
+            <label for="applicantPhone">Phone</label>
+            <input id="applicantPhone" name="applicantPhone" type="tel">
+          </div>
+
+          <div class="field full">
+            <label for="resumeUpload">Resume (PDF)</label>
+            <input id="resumeUpload" name="resumeUpload" type="file" accept=".pdf" required>
+          </div>
+
+          <div class="field full">
+            <label for="coverLetter">Cover Letter (optional)</label>
+            <textarea id="coverLetter" name="coverLetter" rows="4"></textarea>
+          </div>
+
+          <!-- hidden job title -->
+          <input type="hidden" name="jobTitle" id="applyJobValue">
+
+        </div>
+
+        <div class="apply-form-actions">
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+          <button type="button" class="btn btn-ghost" id="cancelApplyBtn">Cancel</button>
+        </div>
+
+        <div id="applyFormMsg" class="form-message"></div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- GLOBAL JS -->
+<script src="js/index.js" defer></script>
+
+<!-- PAGE-SPECIFIC -->
+<script src="js/career.js" defer></script>
+
+</body>
+</html>
