@@ -36,6 +36,7 @@ const mobileNav = document.getElementById('mobileNav');
 function openModal() {
   supportModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
   // Focus first input
   const first = supportModal.querySelector('input, select, textarea, button');
   if (first) first.focus();
@@ -46,7 +47,8 @@ function closeModal() {
   document.body.style.overflow = '';
   supportFormMsg.textContent = '';
   supportForm.reset();
-  // ensure personal view (default)
+
+  // Ensure personal view (default)
   setClientType('personal');
 }
 
@@ -72,12 +74,24 @@ supportModal.addEventListener('change', (e) => {
 // -----------------------------
 // Modal open/close events
 // -----------------------------
-[openSupportBtn, openSupportBtnMobile, heroSupportBtn, servicesSupportBtn].forEach(btn => {
-  if (btn) btn.addEventListener('click', (ev) => {
-    ev.preventDefault();
+
+// SAFE: PreventDefault only if needed (fixes accordion conflict)
+function attachModalOpen(btn) {
+  if (!btn) return;
+
+  btn.addEventListener('click', (ev) => {
+    // Only prevent default for actual support modal buttons (links)
+    if (btn.tagName === 'A' || btn.getAttribute('data-open-support')) {
+      ev.preventDefault();
+    }
     openModal();
   });
-});
+}
+
+attachModalOpen(openSupportBtn);
+attachModalOpen(openSupportBtnMobile);
+attachModalOpen(heroSupportBtn);
+attachModalOpen(servicesSupportBtn);
 
 if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 if (cancelSupportBtn) cancelSupportBtn.addEventListener('click', closeModal);
@@ -101,12 +115,9 @@ if (mobileMenuBtn) {
   mobileMenuBtn.addEventListener('click', () => {
     const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
     mobileMenuBtn.setAttribute('aria-expanded', (!expanded).toString());
+
     if (mobileNav) {
-      if (expanded) {
-        mobileNav.hidden = true;
-      } else {
-        mobileNav.hidden = false;
-      }
+      mobileNav.hidden = expanded;
     }
   });
 }
@@ -126,12 +137,10 @@ if (supportForm) {
     formData.append('_subject', 'New Support Request — AMP Consulting');
 
     try {
-      // Use fetch to post form data to your endpoint
       const res = await fetch(FORM_ENDPOINT_SUPPORT, {
         method: 'POST',
         body: formData,
         headers: {
-          // Note: do not set Content-Type when sending FormData; browser will set the correct boundary
           'Accept': 'application/json'
         }
       });
@@ -139,11 +148,13 @@ if (supportForm) {
       if (res.ok) {
         supportFormMsg.textContent = 'Thank you — we received your request and will contact you shortly.';
         supportForm.reset();
+
         // Close modal after short delay
         setTimeout(closeModal, 1800);
       } else {
         const data = await res.json().catch(() => ({}));
-        supportFormMsg.textContent = data?.error || 'There was an issue submitting the form. Please try again or email info@ampconsulting.com';
+        supportFormMsg.textContent =
+          data?.error || 'There was an issue submitting the form. Please try again or email info@ampconsulting.com';
       }
     } catch (err) {
       console.error(err);
@@ -179,7 +190,6 @@ window.addEventListener("scroll", () => {
 
   lastScroll = currentScroll;
 });
-
 
 /* ----------------------------------------------------------------
   NOTE on Careers & file uploads:

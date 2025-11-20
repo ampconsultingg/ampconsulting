@@ -1,4 +1,4 @@
-/* services.css — updated to match index theme */
+/* services.css — updated to match index theme, warm & customer-friendly */ 
 
 /* ============================
    CSS variables (same as index)
@@ -16,6 +16,10 @@
   --muted: #777777;
   --shadow: 0 6px 18px rgba(0,0,0,0.06);
   --radius: 12px;
+
+  --acc-bg: #FFFFFF;
+  --acc-hover: #FAFAFA;
+  --acc-border: #E4E4E4;
 }
 
 /* ============================
@@ -30,45 +34,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================
-   Navbar (matching index)
-   ============================ */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 80;
+/* Allow clicking through the header when hidden */
+.site-header.nav-hidden {
+  pointer-events: auto !important;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.25s;
-}
-
-.nav-links a:hover,
-.nav-links .active {
-  color: var(--brand-red);
-}
 
 /* ============================
    Header Section
    ============================ */
 .services-header {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 20px 70px;
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
 }
@@ -76,30 +53,33 @@ body {
 .services-header h1 {
   color: var(--text);
   margin-bottom: 10px;
+  font-size: 42px;
+  font-weight: 700;
 }
 
 .services-header p {
   color: var(--subtext);
   font-size: 18px;
+  line-height: 1.6;
 }
 
 /* ============================
-   Services Grid
+   Services Summary Grid
    ============================ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
   padding: 60px 20px;
 }
 
 .service-card {
   background: var(--surface);
-  padding: 30px;
+  padding: 28px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  transition: 0.25s;
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
 }
 
 .service-card:hover {
@@ -107,14 +87,149 @@ body {
   box-shadow: 0 10px 26px rgba(0,0,0,0.08);
 }
 
-.service-card h2 {
+.service-card h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   color: var(--text);
+  font-size: 22px;
 }
 
 .service-card p {
   color: var(--subtext);
+  line-height: 1.55;
+}
+
+.link-more {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--brand-red);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.link-more:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   Section intro text
+   ============================ */
+.section-intro {
+  color: var(--subtext);
+  margin-bottom: 18px;
+  margin-top: 4px;
+  max-width: 640px;
+  line-height: 1.55;
+}
+
+/* ============================
+   Accordion container
+   ============================ */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ============================
+   Accordion card
+   ============================ */
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Header button */
+.accordion-header {
+  width: 100%;
+  padding: 18px 20px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Title + summary text */
+.accordion-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accordion-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accordion-summary {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Chevron */
+.accordion-chevron {
+  transition: transform 0.3s ease;
+}
+
+/* ============================
+   Accordion content area
+   ============================ */
+.accordion-content {
+  background: #fafafa;
+  padding: 0 0;     /* Fixed — no visible padding when closed */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.25s ease;
+}
+
+/* FIX — fully collapsed hidden state */
+.accordion-content[hidden] {
+  max-height: 0 !important;
+  padding: 0 0 !important;
+  overflow: hidden;
+}
+
+/* FIX — visible state gets full padding */
+.accordion-content:not([hidden]) {
+  padding: 16px 20px 20px;
+}
+
+.accordion-content p,
+.accordion-content ul {
+  margin: 14px 0;
+}
+
+/* ============================
+   CTA buttons under accordion
+   ============================ */
+.section-cta {
+  margin-top: 18px;
+  text-align: left;
+}
+
+/* ============================
+   Responsive tweaks
+   ============================ */
+@media (max-width: 600px) {
+
+  .services-header h1 {
+    font-size: 32px;
+  }
+
+  .accordion-header {
+    padding: 16px 18px;
+  }
+
+  .accordion-content:not([hidden]) {
+    padding: 14px 18px 18px;
+  }
 }
 
 /* ============================

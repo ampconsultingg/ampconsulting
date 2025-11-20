@@ -1,4 +1,4 @@
-<!-- services.html (Fully Corrected) -->
+<!-- services.html (Accordion + Summary — Warm, customer-friendly) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,7 @@
 <title>AMP Consulting — Services</title>
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/services.css" />
+<meta name="description" content="AMP Consulting — Apple-focused IT support: personal help, small business IT, managed services, cloud and security." />
 </head>
 <body>
 <!-- NAVBAR (EXACT COPY FROM index.html) -->
@@ -47,27 +48,166 @@
 
 
 <!-- SERVICES HERO -->
-<header class="services-header"> <h1>Our Services</h1> <p>Advanced, modern, tech-driven solutions for businesses of the future.</p> </header>
+<header class="services-header">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>Advanced, modern, tech-driven solutions for people and small businesses who love the Apple ecosystem.</p>
+    <p class="lead" style="max-width:700px;margin:8px auto 0;color:var(--subtext);">
+      We combine practical technical experience with friendly, human support — from one-off device fixes to ongoing managed services. If you use Apple devices, we make them simple, secure, and productive.
+    </p>
+  </div>
+</header>
 
-<!-- SERVICES GRID -->
-<section class="services-grid">
-<div class="service-card">
-<h3>IT Support</h3>
-<p>Remote and onsite troubleshooting for all devices.</p>
-</div>
-<div class="service-card">
-<h3>Cybersecurity</h3>
-<p>Threat protection, monitoring, and risk analysis.</p>
-</div>
-<div class="service-card">
-<h3>Cloud Setup</h3>
-<p>Microsoft 365, Azure, Google Workspace, AWS and more.</p>
-</div>
-<div class="service-card">
-<h3>Business Infrastructure</h3>
-<p>Network installs, automation workflows, hardware provisioning.</p>
-</div>
+<!-- SERVICES SUMMARY GRID -->
+<section class="services-grid container" aria-labelledby="services-summary">
+  <h2 id="services-summary" style="display:none">Services summary</h2>
+
+  <div class="service-card">
+    <h3>IT Support</h3>
+    <p>Fast remote and onsite troubleshooting for Macs, iPhones, and iPads — fixes that get you back to work quickly.</p>
+    <a class="link-more" href="#services-details">Read more →</a>
+  </div>
+
+  <div class="service-card">
+    <h3>Cybersecurity</h3>
+    <p>Practical security measures for small teams: secure Wi-Fi, backups, password guidance, and threat prevention basics.</p>
+    <a class="link-more" href="#services-details">Read more →</a>
+  </div>
+
+  <div class="service-card">
+    <h3>Cloud Setup</h3>
+    <p>Microsoft 365, Google Workspace and iCloud for teams — migrations, configuration, and sensible backup strategies.</p>
+    <a class="link-more" href="#services-details">Read more →</a>
+  </div>
+
+  <div class="service-card">
+    <h3>Business Infrastructure</h3>
+    <p>Office networking, device provisioning, and workflow automation so your team can collaborate without friction.</p>
+    <a class="link-more" href="#services-details">Read more →</a>
+  </div>
 </section>
+
+<!-- DETAILED SERVICE BREAKDOWN (Accordion) -->
+<!-- DETAILED SERVICE BREAKDOWN (Accordion) -->
+<section id="services-details" class="section container" aria-labelledby="details-heading" style="margin-top:36px;">
+  <h2 id="details-heading">Detailed Service Breakdown</h2>
+  <p class="section-intro">Click a topic to learn more about how we help — each section expands with real-world examples and outcomes.</p>
+
+  <div class="accordion" id="servicesAccordion" role="tablist" aria-multiselectable="false">
+
+    <!-- Personal Apple Support -->
+    <div class="accordion-item" data-index="0">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-content-0" id="acc-header-0" type="button" role="tab">
+        <div class="accordion-header-text">
+          <span class="accordion-title">Personal Apple Support</span>
+          <p class="accordion-summary">Our personal support service is built for individuals who want their Apple devices to “just work.”</p>
+        </div>
+        <svg class="accordion-chevron" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="acc-content-0" class="accordion-content" role="region" aria-labelledby="acc-header-0" hidden>
+        <p>
+          Our personal support service is built for individuals who want their Apple devices to “just work.” We help with the frustrating bits — and show you a few simple tips that save time every day.
+        </p>
+        <ul>
+          <li>Troubleshooting for Mac, iPhone, and iPad — fast remote help and optional onsite visits.</li>
+          <li>Performance tuning & system cleanup to make older devices feel fresh again.</li>
+          <li>Secure backups (Time Machine, iCloud) and data migration to a new device.</li>
+          <li>Apple ID and iCloud troubleshooting — syncing, family sharing, and storage management.</li>
+          <li>One-on-one walkthroughs and training so you get more done with less fuss.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Small Business IT Support -->
+    <div class="accordion-item" data-index="1">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-content-1" id="acc-header-1" type="button" role="tab">
+        <div class="accordion-header-text">
+          <span class="accordion-title">Small Business IT Support</span>
+          <p class="accordion-summary">We help small teams run reliably — from onboarding to secure cloud access.</p>
+        </div>
+        <svg class="accordion-chevron" width="18" height="18">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="acc-content-1" class="accordion-content" role="region" aria-labelledby="acc-header-1" hidden>
+        <p>
+          We help small teams run reliably — from onboarding new hires to securing shared drives. Our approach balances security and usability so your people can focus on work.
+        </p>
+        <ul>
+          <li>Device provisioning and management (MDM guidance and setup for Apple fleets).</li>
+          <li>Email, calendar and domain configuration (Microsoft 365, Google Workspace).</li>
+          <li>Secure Wi-Fi, VPN advice, and local network setup for stable connectivity.</li>
+          <li>Printer and file-sharing workflows — reduce friction for everyday tasks.</li>
+          <li>Policy recommendations: backups, access control, and incident response basics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Managed IT Services -->
+    <div class="accordion-item" data-index="2">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-content-2" id="acc-header-2" type="button" role="tab">
+        <div class="accordion-header-text">
+          <span class="accordion-title">Managed IT Services</span>
+          <p class="accordion-summary">Ongoing maintenance, protection, and predictable budgeting for your business.</p>
+        </div>
+        <svg class="accordion-chevron" width="18" height="18">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="acc-content-2" class="accordion-content" role="region" aria-labelledby="acc-header-2" hidden>
+        <p>
+          Our managed plans give you ongoing protection and predictable budgeting. We proactively maintain systems so issues are caught early — often before you notice them.
+        </p>
+        <ul>
+          <li>Regular maintenance windows and proactive health checks.</li>
+          <li>Patch management and security updates for macOS and key apps.</li>
+          <li>Backup monitoring and recovery testing to protect critical data.</li>
+          <li>Priority support for plan members, with remote troubleshooting included.</li>
+          <li>Quarterly reviews and recommendations to keep systems aligned with business goals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cloud & Modern Workplace -->
+    <div class="accordion-item" data-index="3">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-content-3" id="acc-header-3" type="button" role="tab">
+        <div class="accordion-header-text">
+          <span class="accordion-title">Cloud & Modern Workplace</span>
+          <p class="accordion-summary">Move to cloud tools confidently — with secure, practical setups.</p>
+        </div>
+        <svg class="accordion-chevron" width="18" height="18">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div id="acc-content-3" class="accordion-content" role="region" aria-labelledby="acc-header-3" hidden>
+        <p>
+          Move your team to reliable cloud tools without the guesswork. We focus on secure, practical setups that make collaboration simple and backups reliable.
+        </p>
+        <ul>
+          <li>Microsoft 365 and Google Workspace setup, migration, and management.</li>
+          <li>iCloud for Business guidance and team sharing strategies.</li>
+          <li>Cloud backup planning and permission controls for safe sharing.</li>
+          <li>Integrations and automation to reduce manual tasks.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="section-cta" style="margin-top:24px;">
+    <button id="servicesSupportBtn" class="btn btn-primary">Need immediate help? Request Support</button>
+    <a href="contact.html" class="btn btn-outline" style="margin-left:12px;">Contact Sales</a>
+  </div>
+</section>
+
+
 
  <!-- SUPPORT MODAL (Branded header) -->
   <div id="supportModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="supportModalTitle">
@@ -181,8 +321,8 @@
     </div>
   </div>
 
-  <!-- Global + page scripts -->
-  <script src="js/index.js" defer></script>
-  <script src="js/about.js" defer></script>
+<!-- Scripts -->
+<!-- <script src="js/index.js" defer></script> -->
+<script src="js/services.js" defer></script>
 </body>
 </html>
